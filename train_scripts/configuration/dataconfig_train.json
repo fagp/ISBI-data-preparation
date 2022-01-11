@@ -1,0 +1,425 @@
+{
+    "BF-HSC-GT": {
+        "dataset_folder": "./train_val/BF-C2DL-HSC",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "BF-MUSC-GT": {
+        "dataset_folder": "./train_val/BF-C2DL-MuSC",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "DIC-HELA-GT": {
+        "dataset_folder": "./train_val/DIC-C2DH-HeLa",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-MSC-GT": {
+        "dataset_folder": "./train_val/Fluo-C2DL-MSC",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-GOWT1-GT": {
+        "dataset_folder": "./train_val/Fluo-N2DH-GOWT1",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-HELA-GT": {
+        "dataset_folder": "./train_val/Fluo-N2DL-HeLa",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "PHC-U373-GT": {
+        "dataset_folder": "./train_val/PhC-C2DH-U373",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "PHC-PSC-GT": {
+        "dataset_folder": "./train_val/PhC-C2DL-PSC",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-A549-GT": {
+        "dataset_folder": "./train_val/Fluo-C3DH-A549",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((256,256)), ToTensor()"
+    },
+    "Fluo-H157-GT": {
+        "dataset_folder": "./train_val/Fluo-C3DH-H157",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-MDA231-GT": {
+        "dataset_folder": "./train_val/Fluo-C3DL-MDA231",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CE-GT": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CE",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CHO-GT": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CHO",
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "BF-HSC-ST": {
+        "dataset_folder": "./train_val/BF-C2DL-HSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "BF-MUSC-ST": {
+        "dataset_folder": "./train_val/BF-C2DL-MuSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "DIC-HELA-ST": {
+        "dataset_folder": "./train_val/DIC-C2DH-HeLa",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-MSC-ST": {
+        "dataset_folder": "./train_val/Fluo-C2DL-MSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-GOWT1-ST": {
+        "dataset_folder": "./train_val/Fluo-N2DH-GOWT1",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-HELA-ST": {
+        "dataset_folder": "./train_val/Fluo-N2DL-HeLa",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "PHC-U373-ST": {
+        "dataset_folder": "./train_val/PhC-C2DH-U373",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "PHC-PSC-ST": {
+        "dataset_folder": "./train_val/PhC-C2DL-PSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-A549-ST": {
+        "dataset_folder": "./train_val/Fluo-C3DH-A549",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((256,256)), ToTensor()"
+    },
+    "Fluo-H157-ST": {
+        "dataset_folder": "./train_val/Fluo-C3DH-H157",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-MDA231-ST": {
+        "dataset_folder": "./train_val/Fluo-C3DL-MDA231",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CE-ST": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CE",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CHO-ST": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CHO",
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "BF-HSC-GT_ST": {
+        "dataset_folder": "./train_val/BF-C2DL-HSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "BF-MUSC-GT_ST": {
+        "dataset_folder": "./train_val/BF-C2DL-MuSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "DIC-HELA-GT_ST": {
+        "dataset_folder": "./train_val/DIC-C2DH-HeLa",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-MSC-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-C2DL-MSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-GOWT1-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-N2DH-GOWT1",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-HELA-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-N2DL-HeLa",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "PHC-U373-GT_ST": {
+        "dataset_folder": "./train_val/PhC-C2DH-U373",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "PHC-PSC-GT_ST": {
+        "dataset_folder": "./train_val/PhC-C2DL-PSC",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-A549-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-C3DH-A549",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((256,256)), ToTensor()"
+    },
+    "Fluo-H157-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-C3DH-H157",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((1024,1024)), ToTensor()"
+    },
+    "Fluo-MDA231-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-C3DL-MDA231",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CE-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CE",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "Fluo-CHO-GT_ST": {
+        "dataset_folder": "./train_val/Fluo-N3DH-CHO",
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()"
+    },
+    "allGT": {
+        "dataset_folder": [
+            "./train_val/BF-C2DL-HSC",
+            "./train_val/BF-C2DL-MuSC",
+            "./train_val/DIC-C2DH-HeLa",
+            "./train_val/Fluo-C2DL-MSC",
+            "./train_val/Fluo-C3DH-A549",
+            "./train_val/Fluo-C3DH-H157",
+            "./train_val/Fluo-C3DL-MDA231",
+            "./train_val/Fluo-N2DH-GOWT1",
+            "./train_val/Fluo-N2DL-HeLa",
+            "./train_val/Fluo-N3DH-CE",
+            "./train_val/Fluo-N3DH-CHO",
+            "./train_val/PhC-C2DH-U373",
+            "./train_val/PhC-C2DL-PSC"
+        ],
+        "image_folder": "images_GT",
+        "label_folder": "labels_GT",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()",
+        "module": "dataloaders.segdataset_all"
+    },
+    "allST": {
+        "dataset_folder": [
+            "./train_val/BF-C2DL-HSC",
+            "./train_val/BF-C2DL-MuSC",
+            "./train_val/DIC-C2DH-HeLa",
+            "./train_val/Fluo-C2DL-MSC",
+            "./train_val/Fluo-C3DH-A549",
+            "./train_val/Fluo-C3DH-H157",
+            "./train_val/Fluo-C3DL-MDA231",
+            "./train_val/Fluo-N2DH-GOWT1",
+            "./train_val/Fluo-N2DL-HeLa",
+            "./train_val/Fluo-N3DH-CE",
+            "./train_val/Fluo-N3DH-CHO",
+            "./train_val/PhC-C2DH-U373",
+            "./train_val/PhC-C2DL-PSC"
+        ],
+        "image_folder": "images_ST",
+        "label_folder": "labels_ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()",
+        "module": "dataloaders.segdataset_all"
+    },
+    "allGT+ST": {
+        "dataset_folder": [
+            "./train_val/BF-C2DL-HSC",
+            "./train_val/BF-C2DL-MuSC",
+            "./train_val/DIC-C2DH-HeLa",
+            "./train_val/Fluo-C2DL-MSC",
+            "./train_val/Fluo-C3DH-A549",
+            "./train_val/Fluo-C3DH-H157",
+            "./train_val/Fluo-C3DL-MDA231",
+            "./train_val/Fluo-N2DH-GOWT1",
+            "./train_val/Fluo-N2DL-HeLa",
+            "./train_val/Fluo-N3DH-CE",
+            "./train_val/Fluo-N3DH-CHO",
+            "./train_val/PhC-C2DH-U373",
+            "./train_val/PhC-C2DL-PSC"
+        ],
+        "image_folder": "images_ST",
+        "label_folder": "labels_GT+ST",
+        "number_classes": "4",
+        "is_3D": "False",
+        "split": "",
+        "transform_parameter": "NormalizePercentile(), Rotation(180), RandomFlip(0.5), RandomCrop((512,512)), ToTensor()",
+        "module": "dataloaders.segdataset_all"
+    }
+}
