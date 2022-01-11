@@ -15,14 +15,10 @@ def create_train_script(datasets, modes):
 
     for data in datasets:
         for mode in modes:
-            if not os.path.exists(
-                os.path.join("train_val", data, "labels_" + mode)
-            ):
+            if not os.path.exists(os.path.join("train_val", data, "labels_" + mode)):
                 continue
             current_dataset = "{}-{}".format(data, mode)
-            script_file = os.path.join(
-                script_folder, "{}_{}.sh".format(data, mode)
-            )
+            script_file = os.path.join(script_folder, "{}_{}.sh".format(data, mode))
             execution_line = (
                 "jcell train --experiment "
                 + current_dataset
@@ -44,15 +40,15 @@ def create_configuration(datasets, modes):
 
     for data in datasets:
         for mode in modes:
-            if not os.path.exists(
-                os.path.join("train_val", data, "labels_" + mode)
-            ):
+            if not os.path.exists(os.path.join("train_val", data, "labels_" + mode)):
                 continue
             current_dataset = "{}-{}".format(data, mode)
             entry = config.get(current_dataset, dict())
 
             entry["dataset_folder"] = "../train_val/{}".format(data)
-            entry["image_folder"] = "images_{}".format(mode)
+            entry["image_folder"] = "images_{}".format(
+                mode if mode != "GT+ST" else "ST"
+            )
             entry["label_folder"] = "labels_{}".format(mode)
             entry["number_classes"] = "4"
             entry["is_3D"] = "True" if "3D" in data else "False"
@@ -82,9 +78,7 @@ def check_challenge_datasets(datasets):
 
     for data in datasets:
         if not os.path.exists(os.path.join("test", data)):
-            raise ValueError(
-                "{}/test/{} folder not found".format(os.curdir, data)
-            )
+            raise ValueError("{}/test/{} folder not found".format(os.curdir, data))
 
 
 # function for downloading all training datasets
@@ -94,9 +88,7 @@ def check_training_datasets(datasets):
 
     for data in datasets:
         if not os.path.exists(os.path.join("train_val", data)):
-            raise ValueError(
-                "{}/train_val/{} folder not found".format(os.curdir, data)
-            )
+            raise ValueError("{}/train_val/{} folder not found".format(os.curdir, data))
 
 
 # transform instance label to semantic label following our paper
@@ -124,9 +116,7 @@ def create_semantic_label(datasets, sequences, modes):
                 path_instances = (
                     os.path.join(data, "{}_{}".format(seq, mode), "SEG")
                     if not is_3D
-                    else os.path.join(
-                        data, "slices_instances_{}_{}".format(seq, mode)
-                    )
+                    else os.path.join(data, "slices_instances_{}_{}".format(seq, mode))
                 )
 
                 # path to images
@@ -141,31 +131,22 @@ def create_semantic_label(datasets, sequences, modes):
 
                 # path to output images.
                 # only images with a corresponding label are copied
-                path_target_images = os.path.join(
-                    data, "images_{}".format(mode)
-                )
+                path_target_images = os.path.join(data, "images_{}".format(mode))
 
                 # check if the instance path exist
                 # useful to check if 3D slices were sucessfully computed
                 if not (
-                    os.path.exists(path_instances)
-                    and os.path.isdir(path_instances)
+                    os.path.exists(path_instances) and os.path.isdir(path_instances)
                 ):
                     continue
 
-                print(
-                    "Creating semantic labels for {}:{}_{}".format(
-                        data, seq, mode
-                    )
-                )
+                print("Creating semantic labels for {}:{}_{}".format(data, seq, mode))
 
                 # 2D annotations are depth 3 relative the current folder
                 # 3D slices (previously extracted) are depth 2 relative the current folder
                 # then, the output folder will be in the same level as the image folder for any dataset
                 output_path = (
-                    "../../../" + path_labels
-                    if not is_3D
-                    else "../../" + path_labels
+                    "../../../" + path_labels if not is_3D else "../../" + path_labels
                 )
 
                 # system call to jcell-dataproc.
@@ -181,9 +162,7 @@ def create_semantic_label(datasets, sequences, modes):
                 os.makedirs(path_target_images, exist_ok=True)
 
                 # annotation are expected to follow CTC naming convention, i.e., man_seg%Nd.tif
-                label_list = [
-                    f for f in os.listdir(path_labels) if f[:7] == "man_seg"
-                ]
+                label_list = [f for f in os.listdir(path_labels) if f[:7] == "man_seg"]
 
                 # for every annotation file
                 for label in label_list:
@@ -199,9 +178,7 @@ def create_semantic_label(datasets, sequences, modes):
                     # copy and rename image file
                     # images are expected to follow CTC naming convention, i.e., t%Nd.tif
                     copyfile(
-                        os.path.join(
-                            path_source_images, label.replace("man_seg", "t")
-                        ),
+                        os.path.join(path_source_images, label.replace("man_seg", "t")),
                         os.path.join(path_target_images, new_name),
                     )
 
@@ -226,9 +203,7 @@ def extract_slices3D(datasets, sequences, modes):
             for seq in sequences:
                 # path to instances labels
                 # labels may be either 3D volumes or 2D slices from the volumes
-                path_instances = os.path.join(
-                    data, "{}_{}".format(seq, mode), "SEG"
-                )
+                path_instances = os.path.join(data, "{}_{}".format(seq, mode), "SEG")
                 # path to original 3D volumes
                 path_source_images = os.path.join(data, seq)
 
@@ -238,14 +213,11 @@ def extract_slices3D(datasets, sequences, modes):
                 )
 
                 # path to output volumes slices
-                path_target_images = os.path.join(
-                    data, "slices_images_{}".format(seq)
-                )
+                path_target_images = os.path.join(data, "slices_images_{}".format(seq))
 
                 # check if the instance path exist
                 if not (
-                    os.path.exists(path_instances)
-                    and os.path.isdir(path_instances)
+                    os.path.exists(path_instances) and os.path.isdir(path_instances)
                 ):
                     continue
 
@@ -261,9 +233,7 @@ def extract_slices3D(datasets, sequences, modes):
                 # for every annotation file
                 for instance in instances_list:
                     # read instance label volume
-                    image = imageio.volread(
-                        os.path.join(path_instances, instance)
-                    )
+                    image = imageio.volread(os.path.join(path_instances, instance))
                     # if 2D slices already
                     if image.ndim == 2:
                         # create new name following CTC naming convention for slices,
@@ -307,15 +277,11 @@ def extract_slices3D(datasets, sequences, modes):
                 # for every volume
                 for org_image in images_list:
                     # read input volume
-                    image = imageio.volread(
-                        os.path.join(path_source_images, org_image)
-                    )
+                    image = imageio.volread(os.path.join(path_source_images, org_image))
 
                     # compute 1 and 99 percentile to be used in
                     # percentile normalization during training
-                    vol_min, vol_max = np.percentile(image, 1), np.percentile(
-                        image, 99
-                    )
+                    vol_min, vol_max = np.percentile(image, 1), np.percentile(image, 99)
                     # modify the first 6 pixels to encode normalization factors
                     # these values will be read during training and used to
                     # normalize the image. guarantees volume-wise normalization.
@@ -333,9 +299,7 @@ def extract_slices3D(datasets, sequences, modes):
                         # create new name following CTC naming convention for slices,
                         # i.e., man_seg%Nd_%Nd.tif
                         name = (
-                            "{}_{:03d}.tif".format(
-                                os.path.splitext(org_image)[0], sl
-                            )
+                            "{}_{:03d}.tif".format(os.path.splitext(org_image)[0], sl)
                             if image.shape[0] > 1
                             else org_image
                         )
@@ -380,11 +344,7 @@ def create_GT_ST(datasets, sequences, modes):
                 ):
                     continue
 
-                print(
-                    "Creating GT+ST modality for {}:{}_{}".format(
-                        data, seq, mode
-                    )
-                )
+                print("Creating GT+ST modality for {}:{}_{}".format(data, seq, mode))
 
                 # create output folder
                 os.makedirs(path_labels, exist_ok=True)
@@ -400,9 +360,7 @@ def create_GT_ST(datasets, sequences, modes):
 
                     # if the same image has a GT annotation
                     if os.path.exists(
-                        os.path.join(
-                            path_instances_GT, label.replace("ST", "GT")
-                        )
+                        os.path.join(path_instances_GT, label.replace("ST", "GT"))
                     ):
                         # then update path for GT annotation
                         path = os.path.join(
@@ -454,7 +412,7 @@ def main():
     extract_slices3D(datasets, sequences, modes)
     create_semantic_label(datasets, sequences, modes)
     create_GT_ST(datasets, sequences, modes)
-    check_challenge_datasets(datasets)
+    # check_challenge_datasets(datasets)
     create_configuration(datasets, modes)
     create_train_script(datasets, modes)
     os.system("./fix_relative_path.sh")
